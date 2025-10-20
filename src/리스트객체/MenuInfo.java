@@ -6,21 +6,32 @@ package 리스트객체;
 // 세금 포함 여부, boolean
 
 // 매개변수가 전부 있는 생성자
-// toString 오버라이딩해서 정보 출력하기
+// toString 오버라이딩해서 정보 출력 하기
 
 public class MenuInfo {
-    private String name;
-    private int price;
-    private String category;
-    private String explanation;
-    private boolean duty;
+    private String name;      // 이름
+    private int price;        // 가격
+    private String category;  // 카테고리
+    private String desc;      // 설명
+    private boolean isTax;    // 세금 포함 여부
 
-    public MenuInfo(String name, int price, String category, String explanation, boolean duty) {
+    public MenuInfo(String name, int price, String category, String desc, boolean isTax) {
         this.name = name;
         this.price = price;
         this.category = category;
-        this.explanation = explanation;
-        this.duty = duty;
+        this.desc = desc;
+        this.isTax = isTax;
+    }
+
+    // toString 오버라이딩
+    @Override
+    public String toString() {
+        return  "이름 : " + name + "\n" +
+                "     가격 : " + price + "\n" +
+                "     카테고리 : " + category + "\n" +
+                "     설명 : " + desc + "\n" +
+                "     세금 여부 : " + (isTax ? "예" : "아니오") + "\n" +
+                "---------------------------------------------------";
     }
 
     public String getName() {
@@ -47,24 +58,19 @@ public class MenuInfo {
         this.category = category;
     }
 
-    public String getExplanation() {
-        return explanation;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setExplanation(String explanation) {
-        this.explanation = explanation;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public boolean isDuty() {
-        return duty;
+    public boolean isTax() {
+        return isTax;
     }
 
-    public void setDuty(boolean duty) {
-        this.duty = duty;
-    }
-
-    @Override
-    public String toString(){
-        return "["+"메뉴 : " + name + " 가격 : "+ price + "원" +" 카테고리 : " + category + " 설명 : " + explanation + " 세금 여부 : " + duty + "]";
+    public void setTax(boolean tax) {
+        isTax = tax;
     }
 }
