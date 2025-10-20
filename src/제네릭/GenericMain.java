@@ -22,5 +22,4 @@ class Person<T> {
     public T getInfo() {
         return info;
     }
-
 }

@@ -32,7 +32,7 @@ public class CarMain {
                 car = null;
         }
 
-        if (car instanceof AirConInterFaceMain ac) {
+        if (car instanceof AirConInterFaceMain) {
             airConOnOff = in.getOption("에어컨");
             if (airConOnOff == 1) car.fuelEff /= AirConInterFaceMain.aircon;
         }

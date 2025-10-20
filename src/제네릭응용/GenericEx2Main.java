@@ -20,7 +20,6 @@ public class GenericEx2Main {
                     keyBoardDeviceController.powerOff();
                     break;
 
-
                 case 2:
                     DeviceController<Monitor> monitorDeviceController = new DeviceController<>();
                     monitorDeviceController.setDevice(new Monitor());
