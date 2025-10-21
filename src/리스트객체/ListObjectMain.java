@@ -36,7 +36,6 @@ public class ListObjectMain {
                     return;
             }
         }
-
     }
 
     // 초기 메뉴 5개 추가
@@ -48,7 +47,7 @@ public class ListObjectMain {
         list.add(new MenuInfo("모카", 5000, "음료", "달달한 커피", true));
     }
 
-    private static MenuInfo createItem() {
+    private static MenuInfo createItem() { // list에 추가 하기 위한 코드.
         System.out.print("이름 : ");
         String name = sc.nextLine();
         System.out.print("가격 : ");
@@ -59,7 +58,7 @@ public class ListObjectMain {
         System.out.print("설명 : ");
         String desc = sc.nextLine();
         System.out.print("[1]세금 포함 [2]세금 별도 : ");
-        boolean isTax = (sc.nextInt()  == 1) ? true : false;
+        boolean isTax = (sc.nextInt() == 1) ? true : false;
 
         return new MenuInfo(name, price, category, desc, isTax);
     }
@@ -68,15 +67,15 @@ public class ListObjectMain {
     // 메뉴 조회
     private static void menuList() {
         int idx = 0; // 인덱스 번호를 주기 위해서 변수 생성
-        for (MenuInfo e : list) {
-            System.out.println("[" + ++idx + "] " + e);  // 선 증가 후 대입
+        for (MenuInfo e : list) { // 향상된 for문
+            System.out.println("[" + ++idx + "] " + e);  // 선 증가 후 대입 "[1] <- (++idx) + MenuInfo의 내용."
         }
     }
 
     // 메뉴 등록
     private static void createMenu() {
         System.out.println("새 메뉴를 등록 하세요 : ");
-        list.add(createItem());
+        list.add(createItem()); // 위에 있는 createItem()을 불러옴.
         System.out.println("신규 메뉴가 추가 되었습니다.");
     }
 
@@ -84,9 +83,9 @@ public class ListObjectMain {
     private static void updateMenu() {
         menuList();
         System.out.print("수정 할 번호를 입력 하세요 : ");
-        int idx = sc.nextInt() - 1;
-        sc.nextLine();
-        if (idx < 0 || idx >= list.size()) {
+        int idx = sc.nextInt() - 1; // 인덱스는 0부터 시작이라 -1을 해줌.
+        sc.nextLine(); // 버퍼 비우기.
+        if (idx < 0 || idx >= list.size()) { // 인덱스가 0보다 작거나, list에 있는 크기보다 크면
             System.out.println("잘못된 메뉴 번호 입니다.");
             return;
         }
@@ -97,14 +96,14 @@ public class ListObjectMain {
 
     // 메뉴 삭제
     private static void deleteMenu() {
-        menuList();
+        menuList(); // 전체적인 리스트를 띄움.
         System.out.print("삭제할 번호를 입력 하세요 : ");
         int idx = sc.nextInt() - 1;
         if (idx < 0 || idx >= list.size()) {
             System.out.println("잘못된 메뉴 번호 입니다.");
             return;
         }
-        list.remove(idx);
+        list.remove(idx); // 인덱스 번호 기준 리스트 삭제.
         menuList();
     }
 
