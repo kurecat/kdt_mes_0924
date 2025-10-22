@@ -10,7 +10,7 @@ public class Main { // 메인
         List<MenuInfo1> drinkMenu = new ArrayList<>();
         List<MenuInfo1> dessertMenu = new ArrayList<>();
         List<MenuInfo1> orderCart = new ArrayList<>();
-        int totalPrice = 0;
+
 
         // 커피 메뉴
         coffeeMenu.add(new MenuInfo1("에스프레소", 1000));
@@ -32,9 +32,10 @@ public class Main { // 메인
         dessertMenu.add(new MenuInfo1("사라다빵", 2500));
         dessertMenu.add(new MenuInfo1("소금빵", 2000));
         dessertMenu.add(new MenuInfo1("고구마빵", 2500));
-
+        int totalPrice = 0;
         Scanner sc = new Scanner(System.in);
         Input in = new Input(sc);
+
 
         while (true) {
             int mainMenuChoice = in.getMenu();
