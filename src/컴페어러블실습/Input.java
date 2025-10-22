@@ -19,9 +19,8 @@ public class Input {
         studentTreeSet.add(new Student("H", 1008, 35, 22, 37, 42));
         studentTreeSet.add(new Student("I", 1009, 100, 21, 38, 41));
         studentTreeSet.add(new Student("J", 1010, 75, 100, 95, 100));
-
+        System.out.println("=".repeat(15) + " 학생 데이터 " + "=".repeat(15));
         for (Student student : studentTreeSet) System.out.println(student);
+        System.out.println("=".repeat(40));
     }
 }
-
-

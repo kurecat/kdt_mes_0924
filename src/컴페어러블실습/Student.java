@@ -29,7 +29,7 @@ public class Student implements Comparable<Student>{
 
     @Override
     public String toString(){
-        return "학번 : " + studentNumber + " 이름 : " + name + " 총점 : " + getTotal() + " 평균 : " + getAge();
+        return "학번: " + studentNumber + " 이름: " + name + " 총점: " + getTotal() + " 평균: " + getAge();
     }
 
     public String getName() {
@@ -88,6 +88,4 @@ public class Student implements Comparable<Student>{
     public double getAge() {
         return getTotal() / 4.0;
     }
-
-
 }
